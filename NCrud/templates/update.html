@@ -1,0 +1,16 @@
+<table align="center" border="1px">
+    {%for i in data%}
+    <tr>
+        <form action="update_pro" method="post">
+            {% csrf_token %}
+            <td>{{i.id}}<input type="hidden" name="id" value="{{i.id}}"/></td>
+            <td><input type="text" name="sname" value="{{i.sname}}"/></td>
+            <td><input type="email" name="email" value="{{i.email}}"/></td>
+            <td><input type="number" name="mobile" value="{{i.mobile}}"/></td>
+            <td><input type="text" name="address" value="{{i.address}}"/></td>
+            <td><button>Update</button></td>
+            <td><a href="delete_pro?eid={{i.id}}">Delete</a></td>
+        </form>
+    </tr>
+    {%endfor%}
+</table>
